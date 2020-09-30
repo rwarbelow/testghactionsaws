@@ -12,4 +12,5 @@ jobs:
     steps:
       - name: Testing github branch name
         run: echo ${GITHUB_REF##*/}
-             echo ${DEVOPS_DEV_AWS_ACCESS_KEY_ID}
+      - name: Test aws key
+        run: echo ${DEVOPS_DEV_AWS_ACCESS_KEY_ID}
