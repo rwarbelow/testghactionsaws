@@ -9,6 +9,7 @@ on:
 
 jobs:
   publish_schema:
+    runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
     steps:
       - name: Testing github branch name
