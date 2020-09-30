@@ -1,0 +1,15 @@
+name: Publish-Schema
+
+on:
+  pull_request:
+    branches:
+      - master
+      - production
+    types: [closed]
+
+jobs:
+  publish_schema:
+    if: github.event.pull_request.merged == true
+    steps:
+      - name: Testing github branch name
+      echo ${GITHUB_REF##*/}
