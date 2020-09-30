@@ -1,16 +1,14 @@
 name: Publish-Schema
 
 on:
-  pull_request:
+  push:
     branches:
       - master
       - production
-    types: [closed]
 
 jobs:
   publish_schema:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
     steps:
       - name: Testing github branch name
         run: echo ${GITHUB_REF##*/}
