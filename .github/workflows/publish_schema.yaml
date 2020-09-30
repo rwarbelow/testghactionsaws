@@ -9,8 +9,10 @@ on:
 jobs:
   publish_schema:
     runs-on: ubuntu-latest
+    env:
+      AWS_KEY: ${{ secrets.DEVOPS_DEV_AWS_ACCESS_KEY_ID }}
     steps:
       - name: Testing github branch name
         run: echo ${GITHUB_REF##*/}
       - name: Test aws key
-        run: echo ${secrets.DEVOPS_DEV_AWS_ACCESS_KEY_ID}
+        run: echo ${AWS_KEY}
